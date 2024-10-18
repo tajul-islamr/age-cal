@@ -1,0 +1,118 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+canvas#backgroundCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 20px;
+    padding: 40px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    transform: scale(0.95);
+    transition: transform 0.5s;
+    backdrop-filter: blur(10px);
+}
+
+.container:hover {
+    transform: scale(1);
+}
+
+.title {
+    font-family: 'Pacifico', cursive;
+    font-size: 28px;
+    color: #ff6b6b;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #444;
+    animation: fadeInUp 1.2s ease-in-out;
+}
+
+.form-group {
+    margin-top: 30px;
+}
+
+.input-field, .animate-button {
+    width: 100%;
+    padding: 12px;
+    margin: 15px 0;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    outline: none;
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.input-field:focus {
+    box-shadow: 0 0 15px rgba(0, 150, 136, 0.5);
+}
+
+.animate-button {
+    background-color: #42a5f5;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    transition: background 0.5s, transform 0.3s;
+    transform: scale(1);
+    font-weight: 600;
+}
+
+.animate-button:hover {
+    background-color: #007bb5;
+    transform: scale(1.1);
+}
+
+.result {
+    margin-top: 30px;
+    font-size: 20px;
+    color: #444;
+    opacity: 0;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+.footer {
+    margin-top: 30px;
+    font-size: 12px;
+    color: #777;
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+        padding: 30px;
+    }
+}
